@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Ewen Salagnac</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -48,31 +47,25 @@
             text-decoration: underline;
         }
     </style>
-
-<script>
-    function verifierCode() {
-        var codeSecret = "1234"; // Changez ce code pour sécuriser l'accès
-        var userCode = prompt("Entrez le code d'accès :");
-        
-        if (userCode === codeSecret) {
-            document.body.style.display = 'block';
-            // Set a session storage item to indicate authentication
-            sessionStorage.setItem('authenticated', 'true');
-        } else {
-            alert("Code incorrect. Accès refusé.");
-            window.location.href = 'index5.html'; // Rediriger vers la page d'accueil en cas d'échec
+    <script>
+        function verifierCode() {
+            var codeSecret = "1234";
+            var userCode = prompt("Entrez le code d'accès :");
+            
+            if (userCode === codeSecret) {
+                document.body.style.display = 'block';
+                sessionStorage.setItem('authenticated', 'true');
+            } else {
+                alert("Code incorrect. Accès refusé.");
+                window.location.href = 'index5.html';
+            }
         }
-    }
-    
-    // Check if the user is authenticated
-    if (sessionStorage.getItem('authenticated') !== 'true') {
-        // Hide the content by default
-        document.body.style.display = 'none';
-        // Ask for the access code when the page loads
-        window.onload = verifierCode;
-    }
-</script>
-
+        
+        if (sessionStorage.getItem('authenticated') !== 'true') {
+            document.body.style.display = 'none';
+            window.onload = verifierCode;
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -92,6 +85,24 @@
             <li><strong>2019 - 2022 :</strong> Baccalauréat Général - Lycée René-Josué Valin, Spécialités Mathématiques & NSI</li>
         </ul>
     </section>
+
+    <section class="certification">
+        <h2>Certifications</h2>
+        <ul>
+            <li>CCNA 1 : Introduction aux réseaux</li>
+            <li>CCNA 2 : Commutations, routage et réseaux sans fil</li>
+            <li>CCNA 3 : Réseaux d'entreprise, sécurité et automatisation</li>
+            <li>CybeR&T-Hygiène Informatique        <a href="https://openbadgefactory.com/v1/assertion/e36b93e8969c92e556765e0851dfb3d5d17a52f8" class="btn-badge" target="_blank">Voir mon badge</a></li>
+            <li>CybeR&T - LAN & Services        <a href="https://openbadgefactory.com/v1/assertion/33a3cc65aa6ccff36078555b80f46a562668ca86" class="btn-badge" target="_blank">Voir mon badge</a></li>
+        </ul>
+    </section>
+        <!-- <p>Scannez les QR codes ci-dessous pour découvrir mes autres compétences :</p> -->
+        
+    
+    <section class="rootme">
+        <h2>Root Me</h2>
+        <p>Nombre de points sur Root Me : <strong>170</strong></p>
+    </section>
     
     <section class="projets">
         <h2>Projets Réalisés</h2>
@@ -103,6 +114,5 @@
             <li>SAE-4.01 - <a href="projets.html#sae-401">Sécurisation d'un système de transmission</a></li>
         </ul>
     </section>
-    
 </body>
 </html>
